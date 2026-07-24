@@ -10,11 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const themeToggleBtn = document.getElementById('theme-toggle');
     
-    // Check local storage or system settings for default theme
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Check local storage for theme, default to 'dark' on first access
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
     } else {
         document.body.classList.remove('dark-theme');
