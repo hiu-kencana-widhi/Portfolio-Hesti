@@ -1,30 +1,30 @@
 /* ==========================================================================
-   DESIGN SYSTEM & VARIABLES
+   DESIGN SYSTEM & VARIABLES (COMIC THEME)
    ========================================================================== */
 :root {
     /* Fonts */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 
-    /* Theme Colors (Light - Default) */
-    --bg-base: #f8fafc;
+    /* Theme Colors (Light Comic - Default) */
+    --bg-base: #fefde8;            /* Pastel Comic Yellow */
     --bg-panel: #ffffff;
-    --bg-panel-glass: rgba(255, 255, 255, 0.75);
-    --border-color: rgba(226, 232, 240, 0.8);
-    --text-main: #0f172a;
-    --text-muted: #475569;
+    --bg-panel-glass: rgba(255, 255, 255, 0.9);
+    --border-color: #000000;       /* Hard black borders */
+    --text-main: #000000;
+    --text-muted: #1e293b;
     --text-inverse: #ffffff;
 
     /* Brand Accent Colors */
-    --primary-color: #0d9488;      /* Teal 600 */
-    --primary-hover: #0f766e;      /* Teal 700 */
-    --primary-light: #ccfbf1;      /* Teal 100 */
-    --primary-glow: rgba(13, 148, 136, 0.3);
+    --primary-color: #facc15;      /* Comic Bold Yellow */
+    --primary-hover: #e2b80f;
+    --primary-light: #fef08a;
+    --primary-glow: rgba(250, 204, 21, 0.4);
     
-    --accent-color: #b45309;       /* Amber 700 */
-    --accent-hover: #92400e;       /* Amber 800 */
-    --accent-light: #fef3c7;       /* Amber 100 */
-    --accent-glow: rgba(180, 83, 9, 0.2);
+    --accent-color: #f43f5e;       /* Comic Pink/Red */
+    --accent-hover: #e11d48;
+    --accent-light: #ffe4e6;
+    --accent-glow: rgba(244, 63, 94, 0.2);
 
     /* UI States */
     --error-color: #ef4444;
@@ -33,39 +33,39 @@
     --success-bg: rgba(16, 185, 129, 0.1);
 
     /* Shadows & Effects */
-    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
-    --hover-shadow: 0 20px 40px -15px rgba(13, 148, 136, 0.12);
-    --glass-blur: 16px;
+    --card-shadow: 6px 6px 0px #000000;     /* Flat Hard Drop Shadow */
+    --hover-shadow: 10px 10px 0px #000000;
+    --glass-blur: 12px;
     --border-radius-sm: 8px;
-    --border-radius-md: 16px;
-    --border-radius-lg: 24px;
-    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --transition-fast: 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+    --transition-normal: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-slow: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Dark Theme Variables */
+/* Dark Theme Variables (Dark Comic) */
 body.dark-theme {
-    --bg-base: #0b0f19;
-    --bg-panel: #131929;
-    --bg-panel-glass: rgba(19, 25, 41, 0.8);
-    --border-color: rgba(51, 65, 85, 0.4);
-    --text-main: #f1f5f9;
+    --bg-base: #12131a;            /* Deep Comic Midnight */
+    --bg-panel: #1a1b26;
+    --bg-panel-glass: rgba(26, 27, 38, 0.9);
+    --border-color: #000000;       /* Hard black borders */
+    --text-main: #ffffff;
     --text-muted: #94a3b8;
-    --text-inverse: #0b0f19;
+    --text-inverse: #000000;
 
-    --primary-color: #14b8a6;      /* Teal 500 */
-    --primary-hover: #2dd4bf;      /* Teal 400 */
-    --primary-light: rgba(20, 184, 166, 0.15);
-    --primary-glow: rgba(20, 184, 166, 0.35);
+    --primary-color: #ffd23f;      /* Comic Bright Yellow */
+    --primary-hover: #ffdf6d;
+    --primary-light: rgba(255, 210, 63, 0.15);
+    --primary-glow: rgba(255, 210, 63, 0.45);
 
-    --accent-color: #f59e0b;       /* Amber 500 */
-    --accent-hover: #fbbf24;       /* Amber 400 */
-    --accent-light: rgba(245, 158, 11, 0.15);
-    --accent-glow: rgba(245, 158, 11, 0.3);
+    --accent-color: #06b6d4;       /* Comic Neon Cyan */
+    --accent-hover: #22d3ee;
+    --accent-light: rgba(6, 182, 212, 0.15);
+    --accent-glow: rgba(6, 182, 212, 0.35);
 
-    --card-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.4);
-    --hover-shadow: 0 25px 45px -15px rgba(20, 184, 166, 0.2);
+    --card-shadow: 6px 6px 0px #000000;
+    --hover-shadow: 10px 10px 0px #000000;
 }
 
 /* ==========================================================================
@@ -592,12 +592,13 @@ section, main {
     font-size: 1.1rem;
 }
 .badge-top-right {
-    top: 20px;
-    right: -20px;
+    top: -15px;
+    right: -25px;
 }
 .badge-bottom-left {
-    bottom: 20px;
-    left: -20px;
+    bottom: -15px;
+    top: auto;
+    left: -25px;
     animation-delay: -3s;
 }
 
@@ -2049,5 +2050,268 @@ section, main {
     }
     .gallery-item:nth-child(n) {
         grid-column: span 1;
+    }
+}
+
+/* ==========================================================================
+   COMIC & POP-ART THEME OVERRIDES (NEO-BRUTALISM STYLE)
+   ========================================================================== */
+
+/* Hard Borders & Shadows for Cards */
+.profile-card-glass, 
+.info-card, 
+.timeline-content-card, 
+.cert-card, 
+.exp-card, 
+.skill-card, 
+.project-card, 
+.contact-form-panel {
+    border: 3px solid #000000 !important;
+    box-shadow: var(--card-shadow) !important;
+    border-radius: var(--border-radius-md) !important;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast) !important;
+    background-color: var(--bg-panel) !important;
+}
+
+.profile-card-glass:hover, 
+.info-card:hover, 
+.timeline-content-card:hover, 
+.cert-card:hover, 
+.exp-card:hover, 
+.skill-card:hover, 
+.project-card:hover, 
+.contact-form-panel:hover {
+    transform: translate(-4px, -4px) !important;
+    box-shadow: var(--hover-shadow) !important;
+}
+
+/* Comic Buttons styling */
+.btn {
+    border: 3px solid #000000 !important;
+    box-shadow: 4px 4px 0px #000000 !important;
+    border-radius: var(--border-radius-sm) !important;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast) !important;
+}
+.btn:hover {
+    transform: translate(-3px, -3px) !important;
+    box-shadow: 7px 7px 0px #000000 !important;
+}
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    color: #000000 !important; /* Black text for primary yellow button */
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover) !important;
+}
+.btn-secondary {
+    background-color: var(--bg-panel) !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+.btn-secondary:hover {
+    background-color: var(--primary-light) !important;
+}
+body.dark-theme .btn-secondary {
+    color: #ffffff !important;
+}
+body.dark-theme .btn-secondary:hover {
+    background-color: var(--primary-light) !important;
+    color: #000000 !important;
+}
+
+/* Form inputs styling */
+.form-group input, 
+.form-group textarea {
+    border: 3px solid #000000 !important;
+    box-shadow: 3px 3px 0px #000000 !important;
+    border-radius: var(--border-radius-sm) !important;
+    background-color: var(--bg-panel) !important;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast) !important;
+}
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none !important;
+    transform: translate(-1px, -1px) !important;
+    box-shadow: 4px 4px 0px #000000 !important;
+    background-color: var(--primary-light) !important;
+    color: #000000 !important;
+}
+body.dark-theme .form-group input:focus, 
+body.dark-theme .form-group textarea:focus {
+    color: #000000 !important;
+}
+
+/* Chips and Badge styling */
+.p-tag, 
+.chip, 
+.badge, 
+.exp-tag, 
+.project-badge, 
+.cert-badge, 
+.floating-badge {
+    border: 2px solid #000000 !important;
+    box-shadow: 2px 2px 0px #000000 !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    background-color: var(--primary-color) !important;
+}
+.p-tag {
+    background-color: var(--accent-color) !important;
+    color: #ffffff !important;
+}
+body.dark-theme .p-tag {
+    color: #000000 !important;
+}
+.exp-tag.org {
+    background-color: var(--accent-color) !important;
+    color: #ffffff !important;
+}
+body.dark-theme .exp-tag.org {
+    color: #000000 !important;
+}
+
+/* Theme Toggle Button overrides */
+.theme-btn {
+    border: 2px solid #000000 !important;
+    box-shadow: 2px 2px 0px #000000 !important;
+    background-color: var(--bg-panel) !important;
+    color: var(--text-main) !important;
+}
+.theme-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px #000000 !important;
+    background-color: var(--primary-light) !important;
+    color: #000000 !important;
+}
+
+/* Sticky Navbar outlines */
+.navbar-container {
+    border-bottom: 4px solid #000000 !important;
+    background-color: var(--bg-panel) !important;
+}
+.logo-badge {
+    background-color: var(--primary-color) !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+    box-shadow: 1.5px 1.5px 0px #000000 !important;
+    padding: 2px 8px !important;
+    border-radius: 6px !important;
+}
+
+/* Timelines styling */
+.edu-timeline::before, 
+.exp-timeline::before {
+    background-color: #000000 !important;
+    width: 4px !important;
+}
+.timeline-marker {
+    background-color: var(--primary-color) !important;
+    border: 3px solid #000000 !important;
+    box-shadow: 2px 2px 0px #000000 !important;
+}
+.exp-bullet {
+    border: 3px solid #000000 !important;
+    box-shadow: 4px 4px 0px #000000 !important;
+    background-color: var(--bg-panel) !important;
+    color: var(--text-main) !important;
+}
+
+/* Gallery Hover overrides */
+.gallery-item {
+    border: 3px solid #000000 !important;
+    box-shadow: var(--card-shadow) !important;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast) !important;
+}
+.gallery-item:hover {
+    transform: translate(-4px, -4px) !important;
+    box-shadow: var(--hover-shadow) !important;
+}
+.gallery-overlay {
+    background: linear-gradient(to top, rgba(250, 204, 21, 0.9), rgba(0, 0, 0, 0.6)) !important;
+}
+.overlay-text {
+    color: #000000 !important;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 0px #000000;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Modal styling */
+.cert-modal-content {
+    border: 4px solid #000000 !important;
+    box-shadow: 8px 8px 0px #000000 !important;
+    background-color: var(--bg-panel) !important;
+}
+.cert-modal-header {
+    border-bottom: 3px solid #000000 !important;
+}
+.lightbox-content img {
+    border: 4px solid #000000 !important;
+    box-shadow: 10px 10px 0px #000000 !important;
+}
+.lightbox-close {
+    text-shadow: 2px 2px 0px #000000;
+}
+.lightbox-nav {
+    border: 2px solid #000000 !important;
+    box-shadow: 3px 3px 0px #000000 !important;
+    background-color: var(--primary-color) !important;
+    color: #000000 !important;
+}
+.lightbox-nav:hover {
+    transform: translateY(-50%) translate(-2px, -2px);
+    box-shadow: 5px 5px 0px #000000 !important;
+}
+
+/* Toast styling */
+.toast {
+    border: 3px solid #000000 !important;
+    box-shadow: 4px 4px 0px #000000 !important;
+    background-color: var(--primary-color) !important;
+    color: #000000 !important;
+}
+
+/* Background blob customization */
+.shape-1 {
+    background: var(--primary-color) !important;
+    filter: blur(80px) !important;
+}
+.shape-2 {
+    background: var(--accent-color) !important;
+    filter: blur(80px) !important;
+}
+.shape-3 {
+    background: #00e5ff !important;
+    filter: blur(80px) !important;
+}
+
+/* Footer layout */
+.footer {
+    border-top: 4px solid #000000 !important;
+}
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    -webkit-text-stroke: 1px #000000;
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+body.dark-theme .footer-logo {
+    text-shadow: 2px 2px 0px var(--primary-color);
+}
+.footer-copyright {
+    border-top: 2px solid #000000 !important;
+}
+
+/* Mobile dropdown menu border locking */
+@media (max-width: 768px) {
+    .nav-links {
+        border-left: 3px solid #000000 !important;
+        border-right: 3px solid #000000 !important;
+        border-bottom: 4px solid #000000 !important;
+        box-shadow: 0 10px 0px #000000 !important;
     }
 }
