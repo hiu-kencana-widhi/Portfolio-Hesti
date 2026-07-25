@@ -1,28 +1,32 @@
 /* ==========================================================================
-   DESIGN SYSTEM & VARIABLES (COMIC THEME)
+   DESIGN SYSTEM & VARIABLES (HARDCORE CYBERPUNK THEME)
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&display=swap');
+
 :root {
     /* Fonts */
-    --font-heading: 'Outfit', sans-serif;
+    --font-heading: 'Orbitron', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'Share Tech Mono', monospace;
 
-    /* Theme Colors (Corporate Navy – Biru Tua Korporat & Emas Klasik) */
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F2F5F9;
+    /* Theme Colors (Cyberpunk Colorful – Neon & Futuristis) */
+    --bg-primary: #F5F6FA;
+    --bg-secondary: #E4E8F0;
     --bg-surface: #FFFFFF;
-    --text-primary: #0B1A2E;
-    --text-secondary: #314662;
-    --text-muted-quiet: #6B829E;
-    --accent: #003366;
-    --accent-hover: #00264D;
-    --gold: #B68B40;
-    --gold-light: #F5EFE1;
-    --border: #D0DAE8;
+    --text-primary: #0B0C10;
+    --text-secondary: #4D516D;
+    --text-muted-quiet: #8287A9;
+    --accent: #FF007F;          /* Hot Neon Pink */
+    --accent-hover: #E60073;    /* Hover Pink */
+    --gold: #00F0FF;            /* Electric Neon Cyan */
+    --gold-light: #E0F8FF;      /* Transparent Cyan base */
+    --border: #0B0C10;          /* Carbon black sharp borders */
+    --scanlines: rgba(0, 0, 0, 0.05);
 
     /* Theme Mappings (Default - Light Mode) */
     --bg-base: var(--bg-primary);
-    --bg-panel: var(--bg-secondary);
-    --bg-panel-glass: rgba(255, 255, 255, 0.9);
+    --bg-panel: var(--bg-surface);
+    --bg-panel-glass: rgba(255, 255, 255, 0.85);
     --border-color: var(--border);
     --text-main: var(--text-primary);
     --text-muted: var(--text-secondary);
@@ -31,66 +35,67 @@
     /* Brand Accent Colors */
     --primary-color: var(--accent);
     --primary-hover: var(--accent-hover);
-    --primary-light: rgba(0, 51, 102, 0.08);
-    --primary-glow: rgba(0, 51, 102, 0.2);
+    --primary-light: rgba(255, 0, 127, 0.08);
+    --primary-glow: rgba(255, 0, 127, 0.25);
     
     --accent-color: var(--gold);
     --accent-light: var(--gold-light);
-    --accent-glow: rgba(182, 139, 64, 0.15);
+    --accent-glow: rgba(0, 240, 255, 0.2);
 
     /* UI States */
     --error-color: #ef4444;
     --error-bg: rgba(239, 68, 68, 0.1);
     --success-color: var(--accent);
-    --success-bg: rgba(0, 51, 102, 0.1);
+    --success-bg: rgba(255, 0, 127, 0.1);
 
     /* Shadows & Effects */
-    --card-shadow: 6px 6px 0px var(--border-color);     /* Theme-based clean flat shadow */
-    --hover-shadow: 8px 8px 0px var(--primary-color);
+    --card-shadow: 5px 5px 0px var(--border-color);
+    --hover-shadow: 7px 7px 0px var(--accent-color);     /* Hover pops with glowing electric cyan flat shadow! */
     --glass-blur: 12px;
-    --border-radius-sm: 8px;
-    --border-radius-md: 12px;
-    --border-radius-lg: 16px;
-    --transition-fast: 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
-    --transition-normal: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    --transition-slow: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --border-radius-sm: 0px;    /* HARDCORE CYBERPUNK: SHARP CORNERS ONLY */
+    --border-radius-md: 0px;
+    --border-radius-lg: 0px;
+    --transition-fast: 0.1s linear;
+    --transition-normal: 0.2s linear;
+    --transition-slow: 0.4s linear;
 }
 
-/* Dark Theme Variables (Corporate Navy - Dark Mode) */
+/* Dark Theme Variables (Cyberpunk Colorful - Dark Mode) */
 body.dark-theme {
-    --bg-primary: #0B1A2E;
-    --bg-secondary: #12253D;
-    --bg-surface: #1C3353;
-    --text-primary: #E8EEF4;
-    --text-secondary: #A1B5D0;
-    --text-muted-quiet: #5C7092;
-    --accent: #4A90E2;
-    --accent-hover: #73A9F0;
-    --gold: #D4AF37;
-    --gold-light: #2A2416;
-    --border: #253E5C;
+    --bg-primary: #050508;      /* Absolute void cyber black */
+    --bg-secondary: #0D0E15;    /* Deep deck blue-black */
+    --bg-surface: #12131C;      /* Cyber console dark violet */
+    --text-primary: #FFFFFF;    /* Pure laser white */
+    --text-secondary: #00F0FF;  /* Glowing electric cyan */
+    --text-muted-quiet: #FF007F;/* Glowing neon pink */
+    --accent: #FF007F;          /* Hot Neon Pink */
+    --accent-hover: #FF3399;    /* Hot Neon Pink glow hover */
+    --gold: #FFE600;            /* Neon Electric Yellow */
+    --gold-light: rgba(255, 230, 0, 0.1);
+    --border: #00F0FF;          /* Laser Cyan glowing border */
+    --scanlines: rgba(0, 0, 0, 0.25);
 
     /* Theme Mappings (Dark Mode) */
     --bg-base: var(--bg-primary);
     --bg-panel: var(--bg-surface);
-    --bg-panel-glass: rgba(28, 51, 83, 0.9);
+    --bg-panel-glass: rgba(18, 19, 28, 0.9);
     --border-color: var(--border);
     --text-main: var(--text-primary);
     --text-muted: var(--text-secondary);
-    --text-inverse: #0B1A2E;
+    --text-inverse: #050508;
 
     /* Brand Accent Colors */
     --primary-color: var(--accent);
     --primary-hover: var(--accent-hover);
-    --primary-light: rgba(74, 144, 226, 0.12);
-    --primary-glow: rgba(74, 144, 226, 0.3);
+    --primary-light: rgba(255, 0, 127, 0.15);
+    --primary-glow: rgba(255, 0, 127, 0.45);
 
     --accent-color: var(--gold);
     --accent-light: var(--gold-light);
-    --accent-glow: rgba(212, 175, 55, 0.2);
+    --accent-glow: rgba(255, 230, 0, 0.3);
 
-    --card-shadow: 6px 6px 0px var(--border-color);
-    --hover-shadow: 8px 8px 0px var(--primary-color);
+    --card-shadow: 5px 5px 0px var(--border-color);      /* Glowing cyan drop shadow */
+    --hover-shadow: 7px 7px 0px var(--accent-color);     /* Hover pops with glowing yellow flat shadow! */
 }
 
 /* ==========================================================================
@@ -112,6 +117,8 @@ html {
 
 body {
     background-color: var(--bg-base);
+    background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, var(--scanlines) 50%);
+    background-size: 100% 4px;
     color: var(--text-main);
     font-family: var(--font-body);
     line-height: 1.6;
@@ -137,19 +144,13 @@ ul {
     list-style: none;
 }
 
-/* Scrollbar Customization */
+/* Hide Scrollbars globally while keeping layout scrollable */
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
 ::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: var(--bg-base);
-}
-::-webkit-scrollbar-thumb {
-    background: var(--border-color);
-    border-radius: var(--border-radius-sm);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
+    display: none; /* Chrome, Safari, Edge, Opera */
 }
 
 /* ==========================================================================
@@ -292,14 +293,16 @@ body.dark-theme .bg-shape {
 .badge {
     background-color: var(--primary-light);
     color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     padding: 6px 16px;
-    font-family: var(--font-heading);
+    font-family: var(--font-mono);
     font-weight: 700;
     font-size: 0.8rem;
-    border-radius: 50px;
+    border-radius: var(--border-radius-sm);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     display: inline-block;
+    box-shadow: 2px 2px 0px var(--primary-color);
 }
 
 /* Subsection Title */
@@ -402,7 +405,7 @@ body.dark-theme .bg-shape {
     color: var(--text-main);
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: var(--border-radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -589,12 +592,14 @@ section, main {
     flex-wrap: wrap;
 }
 .p-tag {
-    background-color: var(--border-color);
-    color: var(--text-muted);
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 4px 10px;
-    border-radius: 50px;
+    border-radius: var(--border-radius-sm);
 }
 
 /* Floating Badges */
@@ -605,10 +610,10 @@ section, main {
     gap: 8px;
     background: var(--bg-panel);
     border: 1px solid var(--border-color);
-    border-radius: 50px;
+    border-radius: var(--border-radius-sm);
     padding: 10px 18px;
     box-shadow: var(--card-shadow);
-    font-family: var(--font-heading);
+    font-family: var(--font-mono);
     font-weight: 700;
     font-size: 0.85rem;
     animation: floatBadge 6s infinite alternate ease-in-out;
@@ -750,7 +755,7 @@ section, main {
     left: -29px;
     width: 12px;
     height: 12px;
-    border-radius: 50%;
+    border-radius: 0;
     background-color: var(--primary-color);
     border: 3px solid var(--bg-panel);
     box-shadow: 0 0 0 4px var(--primary-light);
@@ -763,7 +768,7 @@ section, main {
     box-shadow: var(--card-shadow);
 }
 .timeline-year {
-    font-family: var(--font-heading);
+    font-family: var(--font-mono);
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -792,7 +797,7 @@ section, main {
     padding: 10px 16px;
     border-radius: var(--border-radius-sm);
     margin-bottom: 20px;
-    font-family: var(--font-heading);
+    font-family: var(--font-mono);
 }
 .gpa-label {
     font-weight: 500;
@@ -810,7 +815,7 @@ section, main {
     background-color: var(--accent-light);
     color: var(--accent-color);
     padding: 2px 8px;
-    border-radius: 4px;
+    border-radius: 0;
 }
 .timeline-address {
     display: flex;
@@ -983,7 +988,7 @@ section, main {
     top: 24px;
     width: 44px;
     height: 44px;
-    border-radius: 50%;
+    border-radius: 0;
     background-color: var(--bg-base);
     border: 3px solid var(--border-color);
     box-shadow: var(--card-shadow);
@@ -1039,16 +1044,19 @@ section, main {
     font-weight: 700;
     background-color: var(--primary-light);
     color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     padding: 4px 12px;
-    border-radius: 4px;
+    border-radius: 0;
+    font-family: var(--font-mono);
     text-transform: uppercase;
 }
 .exp-tag.org {
     background-color: rgba(99, 102, 241, 0.1);
     color: #6366f1;
+    border: 1px solid #6366f1;
 }
 .exp-date {
-    font-family: var(--font-heading);
+    font-family: var(--font-mono);
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--accent-color);
@@ -2143,12 +2151,11 @@ body.dark-theme .btn-secondary:hover {
     background-color: var(--primary-light) !important;
     color: #000000 !important;
 }
-
 /* Form inputs styling */
 .form-group input, 
 .form-group textarea {
-    border: 3px solid #000000 !important;
-    box-shadow: 3px 3px 0px #000000 !important;
+    border: 2px solid var(--border-color) !important;
+    box-shadow: 3px 3px 0px var(--border-color) !important;
     border-radius: var(--border-radius-sm) !important;
     background-color: var(--bg-panel) !important;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast) !important;
@@ -2157,13 +2164,13 @@ body.dark-theme .btn-secondary:hover {
 .form-group textarea:focus {
     outline: none !important;
     transform: translate(-1px, -1px) !important;
-    box-shadow: 4px 4px 0px #000000 !important;
-    background-color: var(--primary-light) !important;
-    color: #000000 !important;
+    box-shadow: 4px 4px 0px var(--primary-color) !important;
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-main) !important;
 }
 body.dark-theme .form-group input:focus, 
 body.dark-theme .form-group textarea:focus {
-    color: #000000 !important;
+    color: var(--text-main) !important;
 }
 
 /* Chips and Badge styling */
@@ -2174,78 +2181,79 @@ body.dark-theme .form-group textarea:focus {
 .project-badge, 
 .cert-badge, 
 .floating-badge {
-    border: 2px solid #000000 !important;
-    box-shadow: 2px 2px 0px #000000 !important;
-    border-radius: 6px !important;
+    border: 2px solid var(--border-color) !important;
+    box-shadow: 2px 2px 0px var(--border-color) !important;
+    border-radius: var(--border-radius-sm) !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    color: #000000 !important;
+    color: var(--text-inverse) !important;
     background-color: var(--primary-color) !important;
+    font-family: var(--font-mono) !important;
 }
 .p-tag {
     background-color: var(--accent-color) !important;
-    color: #000000 !important;
+    color: var(--text-inverse) !important;
 }
 body.dark-theme .p-tag {
-    color: #000000 !important;
+    color: var(--text-inverse) !important;
 }
 .exp-tag.org {
     background-color: var(--accent-color) !important;
-    color: #000000 !important;
+    color: var(--text-inverse) !important;
 }
 body.dark-theme .exp-tag.org {
-    color: #000000 !important;
+    color: var(--text-inverse) !important;
 }
 
 /* Theme Toggle Button overrides */
 .theme-btn {
-    border: 2px solid #000000 !important;
-    box-shadow: 2px 2px 0px #000000 !important;
+    border: 2px solid var(--border-color) !important;
+    box-shadow: 2px 2px 0px var(--border-color) !important;
     background-color: var(--bg-panel) !important;
     color: var(--text-main) !important;
 }
 .theme-btn:hover {
     transform: translate(-1px, -1px);
-    box-shadow: 3px 3px 0px #000000 !important;
+    box-shadow: 3px 3px 0px var(--primary-color) !important;
     background-color: var(--primary-light) !important;
-    color: #000000 !important;
+    color: var(--primary-color) !important;
 }
 
 /* Sticky Navbar outlines */
 .navbar-container {
-    border-bottom: 4px solid #000000 !important;
+    border-bottom: 3px solid var(--border-color) !important;
     background-color: var(--bg-panel) !important;
 }
 .logo-badge {
     background-color: var(--primary-color) !important;
-    color: #000000 !important;
-    border: 2px solid #000000 !important;
-    box-shadow: 1.5px 1.5px 0px #000000 !important;
+    color: var(--text-inverse) !important;
+    border: 2px solid var(--border-color) !important;
+    box-shadow: 1.5px 1.5px 0px var(--border-color) !important;
     padding: 2px 8px !important;
-    border-radius: 6px !important;
+    border-radius: var(--border-radius-sm) !important;
 }
 
 /* Timelines styling */
 .edu-timeline::before, 
 .exp-timeline::before {
-    background-color: #000000 !important;
+    background-color: var(--border-color) !important;
     width: 4px !important;
 }
 .timeline-marker {
     background-color: var(--primary-color) !important;
-    border: 3px solid #000000 !important;
-    box-shadow: 2px 2px 0px #000000 !important;
+    border: 3px solid var(--border-color) !important;
+    box-shadow: 2px 2px 0px var(--border-color) !important;
 }
 .exp-bullet {
-    border: 3px solid #000000 !important;
-    box-shadow: 4px 4px 0px #000000 !important;
+    border: 3px solid var(--border-color) !important;
+    box-shadow: 4px 4px 0px var(--border-color) !important;
     background-color: var(--bg-panel) !important;
     color: var(--text-main) !important;
 }
 
 /* Gallery Hover overrides */
 .gallery-item {
-    border: 3px solid #000000 !important;
+    border: 3px solid var(--border-color) !important;
     box-shadow: var(--card-shadow) !important;
     transition: transform var(--transition-fast), box-shadow var(--transition-fast) !important;
 }
@@ -2254,50 +2262,49 @@ body.dark-theme .exp-tag.org {
     box-shadow: var(--hover-shadow) !important;
 }
 .gallery-overlay {
-    background: linear-gradient(to top, rgba(16, 185, 129, 0.9), rgba(0, 0, 0, 0.6)) !important;
+    background: linear-gradient(to top, rgba(255, 0, 127, 0.9), rgba(5, 5, 8, 0.7)) !important;
 }
 .overlay-text {
-    color: #000000 !important;
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    box-shadow: 2px 2px 0px #000000;
+    color: var(--text-inverse) !important;
+    background-color: var(--primary-color);
+    border: 2px solid var(--border-color);
+    box-shadow: 2px 2px 0px var(--border-color);
     padding: 4px 10px;
-    border-radius: 4px;
+    border-radius: var(--border-radius-sm);
 }
 
 /* Modal styling */
 .cert-modal-content {
-    border: 4px solid #000000 !important;
-    box-shadow: 8px 8px 0px #000000 !important;
+    border: 4px solid var(--border-color) !important;
+    box-shadow: 8px 8px 0px var(--border-color) !important;
     background-color: var(--bg-panel) !important;
+    border-radius: var(--border-radius-sm) !important;
 }
 .cert-modal-header {
-    border-bottom: 3px solid #000000 !important;
+    border-bottom: 3px solid var(--border-color) !important;
 }
 .lightbox-content img {
-    border: 4px solid #000000 !important;
-    box-shadow: 10px 10px 0px #000000 !important;
+    border: 4px solid var(--border-color) !important;
+    box-shadow: 10px 10px 0px var(--border-color) !important;
 }
 .lightbox-close {
-    text-shadow: 2px 2px 0px #000000;
+    text-shadow: 2px 2px 0px var(--border-color);
 }
 .lightbox-nav {
-    border: 2px solid #000000 !important;
-    box-shadow: 3px 3px 0px #000000 !important;
-    background-color: var(--primary-color) !important;
-    color: #000000 !important;
+    border: 2px solid var(--border-color) !important;
+    box-shadow: 3px 3px 0px var(--border-color) !important;
 }
 .lightbox-nav:hover {
     transform: translateY(-50%) translate(-2px, -2px);
-    box-shadow: 5px 5px 0px #000000 !important;
+    box-shadow: 5px 5px 0px var(--border-color) !important;
 }
 
 /* Toast styling */
 .toast {
-    border: 3px solid #000000 !important;
-    box-shadow: 4px 4px 0px #000000 !important;
+    border: 3px solid var(--border-color) !important;
+    box-shadow: 4px 4px 0px var(--border-color) !important;
     background-color: var(--primary-color) !important;
-    color: #000000 !important;
+    color: var(--text-inverse) !important;
 }
 
 /* Background blob customization */
@@ -2316,27 +2323,119 @@ body.dark-theme .exp-tag.org {
 
 /* Footer layout */
 .footer {
-    border-top: 4px solid #000000 !important;
+    border-top: 4px solid var(--border-color) !important;
 }
 .footer-logo {
     font-size: 1.8rem;
     font-weight: 800;
-    -webkit-text-stroke: 1px #000000;
+    -webkit-text-stroke: 1px var(--border-color);
     text-shadow: 2px 2px 0px var(--primary-color);
 }
 body.dark-theme .footer-logo {
     text-shadow: 2px 2px 0px var(--primary-color);
 }
 .footer-copyright {
-    border-top: 2px solid #000000 !important;
+    border-top: 2px solid var(--border-color) !important;
 }
 
 /* Mobile dropdown menu border locking */
 @media (max-width: 768px) {
     .nav-links {
-        border-left: 3px solid #000000 !important;
-        border-right: 3px solid #000000 !important;
-        border-bottom: 4px solid #000000 !important;
-        box-shadow: 0 10px 0px #000000 !important;
+        border-left: 3px solid var(--border-color) !important;
+        border-right: 3px solid var(--border-color) !important;
+        border-bottom: 4px solid var(--border-color) !important;
+        box-shadow: 0 10px 0px var(--border-color) !important;
     }
+}
+
+/* Cyberpunk Glitch & Glow Animations */
+@keyframes cyber-glitch {
+    0% {
+        text-shadow: 2px -2px 0px var(--primary-color), -2px 2px 0px var(--accent-color);
+        transform: skew(0deg);
+    }
+    20% {
+        text-shadow: -2px 2px 0px var(--primary-color), 2px -2px 0px var(--accent-color);
+        transform: skew(-0.5deg);
+    }
+    40% {
+        text-shadow: 2px 2px 0px var(--primary-color), -2px -2px 0px var(--accent-color);
+        transform: skew(0.5deg);
+    }
+    60% {
+        text-shadow: -2px -2px 0px var(--primary-color), 2px 2px 0px var(--accent-color);
+        transform: skew(-1deg);
+    }
+    80% {
+        text-shadow: 2px -2px 0px var(--primary-color), -2px 2px 0px var(--accent-color);
+        transform: skew(1deg);
+    }
+    100% {
+        text-shadow: 2px -2px 0px var(--primary-color), -2px 2px 0px var(--accent-color);
+        transform: skew(0deg);
+    }
+}
+
+.section-title:hover, .hero-title:hover, .logo:hover, .footer-logo:hover {
+    animation: cyber-glitch 0.25s infinite linear;
+    color: var(--text-main) !important;
+}
+
+/* HARDCORE CYBERPUNK BRUTALIST OVERRIDES */
+
+/* Asymmetrical Card Cutouts */
+.info-card, 
+.timeline-content-card, 
+.cert-card, 
+.skill-card, 
+.project-card, 
+.software-category {
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%) !important;
+}
+
+/* Dashed Laser timelines */
+.edu-timeline::before, 
+.exp-timeline::before {
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--primary-color),
+        var(--primary-color) 8px,
+        transparent 8px,
+        transparent 16px
+    ) !important;
+}
+
+/* Hazard Stripe Section Dividers */
+.section-divider {
+    width: 120px !important;
+    height: 10px !important;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--primary-color) 6px,
+        transparent 6px,
+        transparent 12px
+    ) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0 !important;
+}
+
+/* Digital Terminal Bracket & Pseudo Symbols */
+.badge::before { content: '[ '; }
+.badge::after { content: ' ]'; }
+.p-tag::before { content: '< '; }
+.p-tag::after { content: ' >'; }
+.exp-tag::before { content: ':: '; }
+.cert-badge::before { content: '// '; }
+.gpa-badge::before { content: 'SYS.IPK: '; }
+.gpa-badge::after { content: ' [OK]'; }
+.chip {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+.chip svg {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0;
 }
