@@ -6,35 +6,47 @@
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 
-    /* Theme Colors (Light Comic - Default) */
-    --bg-base: #fefde8;            /* Pastel Comic Yellow */
-    --bg-panel: #ffffff;
+    /* Theme Colors (Corporate Navy – Biru Tua Korporat & Emas Klasik) */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F2F5F9;
+    --bg-surface: #FFFFFF;
+    --text-primary: #0B1A2E;
+    --text-secondary: #314662;
+    --text-muted-quiet: #6B829E;
+    --accent: #003366;
+    --accent-hover: #00264D;
+    --gold: #B68B40;
+    --gold-light: #F5EFE1;
+    --border: #D0DAE8;
+
+    /* Theme Mappings (Default - Light Mode) */
+    --bg-base: var(--bg-primary);
+    --bg-panel: var(--bg-secondary);
     --bg-panel-glass: rgba(255, 255, 255, 0.9);
-    --border-color: #000000;       /* Hard black borders */
-    --text-main: #000000;
-    --text-muted: #1e293b;
+    --border-color: var(--border);
+    --text-main: var(--text-primary);
+    --text-muted: var(--text-secondary);
     --text-inverse: #ffffff;
 
     /* Brand Accent Colors */
-    --primary-color: #facc15;      /* Comic Bold Yellow */
-    --primary-hover: #e2b80f;
-    --primary-light: #fef08a;
-    --primary-glow: rgba(250, 204, 21, 0.4);
+    --primary-color: var(--accent);
+    --primary-hover: var(--accent-hover);
+    --primary-light: rgba(0, 51, 102, 0.08);
+    --primary-glow: rgba(0, 51, 102, 0.2);
     
-    --accent-color: #f43f5e;       /* Comic Pink/Red */
-    --accent-hover: #e11d48;
-    --accent-light: #ffe4e6;
-    --accent-glow: rgba(244, 63, 94, 0.2);
+    --accent-color: var(--gold);
+    --accent-light: var(--gold-light);
+    --accent-glow: rgba(182, 139, 64, 0.15);
 
     /* UI States */
     --error-color: #ef4444;
     --error-bg: rgba(239, 68, 68, 0.1);
-    --success-color: #10b981;
-    --success-bg: rgba(16, 185, 129, 0.1);
+    --success-color: var(--accent);
+    --success-bg: rgba(0, 51, 102, 0.1);
 
     /* Shadows & Effects */
-    --card-shadow: 6px 6px 0px #000000;     /* Flat Hard Drop Shadow */
-    --hover-shadow: 10px 10px 0px #000000;
+    --card-shadow: 6px 6px 0px var(--border-color);     /* Theme-based clean flat shadow */
+    --hover-shadow: 8px 8px 0px var(--primary-color);
     --glass-blur: 12px;
     --border-radius-sm: 8px;
     --border-radius-md: 12px;
@@ -44,28 +56,41 @@
     --transition-slow: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Dark Theme Variables (Dark Comic) */
+/* Dark Theme Variables (Corporate Navy - Dark Mode) */
 body.dark-theme {
-    --bg-base: #12131a;            /* Deep Comic Midnight */
-    --bg-panel: #1a1b26;
-    --bg-panel-glass: rgba(26, 27, 38, 0.9);
-    --border-color: #000000;       /* Hard black borders */
-    --text-main: #ffffff;
-    --text-muted: #94a3b8;
-    --text-inverse: #000000;
+    --bg-primary: #0B1A2E;
+    --bg-secondary: #12253D;
+    --bg-surface: #1C3353;
+    --text-primary: #E8EEF4;
+    --text-secondary: #A1B5D0;
+    --text-muted-quiet: #5C7092;
+    --accent: #4A90E2;
+    --accent-hover: #73A9F0;
+    --gold: #D4AF37;
+    --gold-light: #2A2416;
+    --border: #253E5C;
 
-    --primary-color: #ffd23f;      /* Comic Bright Yellow */
-    --primary-hover: #ffdf6d;
-    --primary-light: rgba(255, 210, 63, 0.15);
-    --primary-glow: rgba(255, 210, 63, 0.45);
+    /* Theme Mappings (Dark Mode) */
+    --bg-base: var(--bg-primary);
+    --bg-panel: var(--bg-surface);
+    --bg-panel-glass: rgba(28, 51, 83, 0.9);
+    --border-color: var(--border);
+    --text-main: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --text-inverse: #0B1A2E;
 
-    --accent-color: #06b6d4;       /* Comic Neon Cyan */
-    --accent-hover: #22d3ee;
-    --accent-light: rgba(6, 182, 212, 0.15);
-    --accent-glow: rgba(6, 182, 212, 0.35);
+    /* Brand Accent Colors */
+    --primary-color: var(--accent);
+    --primary-hover: var(--accent-hover);
+    --primary-light: rgba(74, 144, 226, 0.12);
+    --primary-glow: rgba(74, 144, 226, 0.3);
 
-    --card-shadow: 6px 6px 0px #000000;
-    --hover-shadow: 10px 10px 0px #000000;
+    --accent-color: var(--gold);
+    --accent-light: var(--gold-light);
+    --accent-glow: rgba(212, 175, 55, 0.2);
+
+    --card-shadow: 6px 6px 0px var(--border-color);
+    --hover-shadow: 8px 8px 0px var(--primary-color);
 }
 
 /* ==========================================================================
@@ -2159,14 +2184,14 @@ body.dark-theme .form-group textarea:focus {
 }
 .p-tag {
     background-color: var(--accent-color) !important;
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 body.dark-theme .p-tag {
     color: #000000 !important;
 }
 .exp-tag.org {
     background-color: var(--accent-color) !important;
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 body.dark-theme .exp-tag.org {
     color: #000000 !important;
@@ -2229,7 +2254,7 @@ body.dark-theme .exp-tag.org {
     box-shadow: var(--hover-shadow) !important;
 }
 .gallery-overlay {
-    background: linear-gradient(to top, rgba(250, 204, 21, 0.9), rgba(0, 0, 0, 0.6)) !important;
+    background: linear-gradient(to top, rgba(16, 185, 129, 0.9), rgba(0, 0, 0, 0.6)) !important;
 }
 .overlay-text {
     color: #000000 !important;
@@ -2285,7 +2310,7 @@ body.dark-theme .exp-tag.org {
     filter: blur(80px) !important;
 }
 .shape-3 {
-    background: #00e5ff !important;
+    background: var(--accent-color) !important;
     filter: blur(80px) !important;
 }
 
